@@ -2,8 +2,11 @@ import { useState,useEffect } from "react"
 import TopBar from "./TopBar"
 import logo from "../../assets/logo.webp"
 import image from "../../assets/image.webp"
+import { useLocation } from 'react-router-dom'
 function Header(){
     const [scrolled,setScrolled] =useState(false)
+    const location = useLocation()
+const isCartPage = location.pathname === '/cart'
     useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 60) {
@@ -17,7 +20,8 @@ function Header(){
   }, [])
 
     return (<>
-        <TopBar/>
+       {!isCartPage && <TopBar />}
+       
          <header className={`sticky top-0 z-50 transition-all duration-300 px-4 py-3 ${
         scrolled ? 'bg-white shadow-sm' : ''
       }`}
