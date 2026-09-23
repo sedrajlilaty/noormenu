@@ -1,0 +1,59 @@
+
+[
+  {
+    "id": 27,
+    "categoryId": 9,
+    "name": "ساندويش كريسبي",
+    "description": "ساندويش كريسبي",
+    "image": "./productImg/كريسبي.webp",
+    "priceOld": 200,
+    "priceNew": 110,
+    "featured": true,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 22,
+    "categoryId": 4,
+    "name": "وجبة شاورما إكسترا",
+    "description": "وجبة شاورما إكسترا + بطاطا + مخللات + مثومة + سلطة روسيّة",
+    "image": "./productImg/شاورما.webp",
+    "priceOld": 300,
+    "priceNew": 199,
+    "featured": true,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 11,
+    "categoryId": 5,
+    "name": "سوبريم",
+    "description": "سوبريم 4 قطع + بطاطا + مخللات",
+    "image": "./productImg/سوبريم.webp",
+    "priceOld": 350,
+    "priceNew": 249,
+    "featured": true,
+    "hasOptions": true,
+    "optionGroups": [
+      {
+        "name": "الحجم",
+        "required": true,
+        "multiple": false,
+        "choices": [
+          { "label": "صغير", "extraPrice": 0 },
+          { "label": "وسط",  "extraPrice": 30 },
+          { "label": "كبير", "extraPrice": 60 }
+        ]
+      },
+      {
+        "name": "إضافات",
+        "required": false,
+        "multiple": true,
+        "choices": [
+          { "label": "جبنة إضافية", "extraPrice": 15 },
+          { "label": "صوص حار",     "extraPrice": 5 }
+        ]
+      }
+    ]
+  }
+]

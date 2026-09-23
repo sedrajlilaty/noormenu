@@ -1,3 +1,4 @@
+import FeatureProduct from "../menu/FeaturedProducts"
 function HomePage()
 {
    return(
@@ -5,6 +6,7 @@ function HomePage()
     <div>CategoriesBar</div>
     <div>SearchBar</div>
     <div>BannerSlider</div>
+    <FeatureProduct/>
     </>
    ) 
 

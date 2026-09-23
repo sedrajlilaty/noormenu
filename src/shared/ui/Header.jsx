@@ -25,18 +25,9 @@ const isCartPage = location.pathname === '/cart'
          <header className={`sticky top-0 z-50 transition-all duration-300 px-4 py-3 ${
         scrolled ? 'bg-white shadow-sm' : ''
       }`}
-      style={
-        !scrolled
-          ? {
-              backgroundImage:
-                'linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.2))',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }
-          : {}
-      }>
+     >
          {!scrolled && (
-        <div className="relative h-23 overflow-hidden">
+        <div className="relative h-48 overflow-hidden">
           <img
             src={image}
             className="absolute inset-0 w-full h-full object-cover"
