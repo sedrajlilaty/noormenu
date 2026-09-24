@@ -30,17 +30,17 @@ const increase = () => {
   }
 
 return(
-<div className="flex bg-white rounded-xl overflow-hidden shadow-sm min-h-[130px] gap-3">
+<div className="flex bg-white rounded-2xl overflow-hidden shadow-sm min-h-[130px] gap-3">
         <img
         src={product.image}
          className="w-[130px] h-[170px] object-cover shrink-0"
         />
-        <div className="flex flex-col justify-between p-6 grow ml-4 ">
+        <div className="flex flex-col justify-between p-4 grow ml-4 ">
           
-        <h3 className="font-bold text-gray-800 mb-1">
+        <h3 className="font-bold text-gray-800 mb-2">
 {product.name}
         </h3 >
-<p className="text-sm text-gray-400">
+<p className="text-sm text-gray-400 leading-6">
     {shortText}
     {long && (
       <button
@@ -59,13 +59,13 @@ return(
 </div>
            {product.hasOptions ? (
         <button
-  onClick={() => onOpenOptions(product)}
-  className="px-8 py-2 rounded-full border border-main text-main text-sm font-bold whitespace-nowrap"
+  onClick={handleSelect}
+  className="border border-main text-main rounded-full px-5 py-1.5 text-sm hover:bg-main hover:text-white transition"
 >
   اختر
 </button>
       ) : (
-        <div className="flex items-center gap-3 bg-gray-100 rounded-full px-3 py-1">
+       <div className="flex items-center gap-3 bg-gray-100 rounded-full px-3 py-1">
           <button onClick={increase} className="text-main font-bold">+</button>
           <span className="font-bold w-4 text-center">{quantity}</span>
           <button onClick={decrease} className="text-main font-bold">−</button>

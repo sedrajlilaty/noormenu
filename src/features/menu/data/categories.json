@@ -1,8 +1,8 @@
 [
-  { "id": 10, "name": "قسم المشاوي",     "image": "/uploads/categories/10.webp" },
-  { "id": 8,  "name": "الوجبات السريعة", "image": "/uploads/categories/8.webp" },
-  { "id": 7,  "name": "الفرّوج",         "image": "/uploads/categories/7.webp" },
-  { "id": 5,  "name": "بروستد",          "image": "/uploads/categories/5.webp" },
-  { "id": 9,  "name": "قسم السندويشات",  "image": "/uploads/categories/9.webp" },
-  { "id": 4,  "name": "شاورما",          "image": "/uploads/categories/4.webp" }
+  { "id": 10, "name": "قسم المشاوي",     "image": "/public/categoriesImg/mashawi.webp" },
+  { "id": 8,  "name": "الوجبات السريعة", "image": "/public/categoriesImg/fastFood.webp" },
+  { "id": 7,  "name": "الفرّوج",         "image": "/public/categoriesImg/checken.webp" },
+  { "id": 5,  "name": "بروستد",          "image": "/public/categoriesImg/brosted.webp" },
+  { "id": 9,  "name": "قسم السندويشات",  "image": "/public/categoriesImg/sandwish.webp" },
+  { "id": 4,  "name": "شاورما",          "image": "/public/categoriesImg/shawrma.webp" }
 ]

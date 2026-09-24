@@ -40,7 +40,7 @@ const isCartPage = location.pathname === '/cart'
             <div className="flex items-center gap-3 ">
                   <img src={logo} className="h-[50px] w-auto rounded-full object-contain" />
 
-              <span className="text-white font-extrabold text-xl">مطعم النور</span>
+              <span className="text-white font-extrabold text-3xl">مطعم النور</span>
                
             </div>
 <button className="w-10 h-10 rounded-full bg-white/40 flex items-center justify-center ml-4">  <span className="text-white">☰</span>

@@ -1,9 +1,9 @@
 function TopBar() {
   return (
-    <div className=" bg-warning text-dark px-6 display: flex
-            justify-content: space-between
-            align-items: center">
-      <span><i class="fas fa-shopping-bag my-4"></i> طلب خارجي</span>
+    <div className="bg-warning text-dark px-6 py-4 flex justify-between items-center">
+      <span className="flex items-center gap-2">
+        <i className="fas fa-shopping-bag"></i> طلب خارجي
+      </span>
     </div>
   )
 }

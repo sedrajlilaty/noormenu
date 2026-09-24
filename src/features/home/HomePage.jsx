@@ -1,6 +1,7 @@
 import FeatureProduct from "../menu/FeaturedProducts"
 import CategoriesBar  from "../menu/CategoriesBar"
-import CategoriesGrid from "../menu/Categoriesgrid "
+import CategoriesGrid from "../menu/Categoriesgrid"
+import SearchBar from "../menu/SearchBar"
 function HomePage()
 {
    return(
@@ -8,7 +9,7 @@ function HomePage()
     <div className="flex flex-col gap-6 py-4">
     <CategoriesBar/>
 <CategoriesGrid/>
-    <div>SearchBar</div>
+    <SearchBar/>
     <div>BannerSlider</div>
     <FeatureProduct/>
     </div>
