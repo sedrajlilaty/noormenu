@@ -1,10 +1,9 @@
 function TopBar() {
   return (
-    <div className="status-bar bg-warning text-dark">
-      <span className="flex items-center h-8 gap-1">
-               <i class="fas fa-shopping-bag me-1"></i> طلب خارجي
-
-      </span>
+    <div className=" bg-warning text-dark px-6 display: flex
+            justify-content: space-between
+            align-items: center">
+      <span><i class="fas fa-shopping-bag my-4"></i> طلب خارجي</span>
     </div>
   )
 }

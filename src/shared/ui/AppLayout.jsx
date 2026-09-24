@@ -4,27 +4,18 @@ import Header from './Header'
 import { Outlet, useNavigation } from 'react-router-dom'
 import Loader from './Loader';
 import Footer from './Footer';
-
 export default function AppLayout() {
-  const navigation = useNavigation();
-  
-  
-  const isLoading = navigation.state === 'loading';
-  
-  console.log('Navigation state:', navigation.state);
-  console.log('Is loading:', isLoading);
+  const navigation = useNavigation()
+  const isLoading = navigation.state === 'loading'
 
   return (
-    <div className='grid grid-rows-[auto_1fr_auto] h-screen'>
-      {isLoading && <Loader/>}
-      <Header/>
-      <div className='overflow-scroll my-2'>
-        <main className='max-w-3xl mx-auto'>
-          <Outlet/>
-        </main>
-      </div>
-      <Footer/>
-      {/* <CartOverview/> */}
+    <div>
+      {isLoading && <Loader />}
+      <Header />
+   <main className="max-w-6xl mx-auto w-full px-4 md:px-8">
+  <Outlet />
+</main>
+      <Footer />
     </div>
   )
 }

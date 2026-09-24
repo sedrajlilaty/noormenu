@@ -27,7 +27,7 @@ const isCartPage = location.pathname === '/cart'
       }`}
      >
          {!scrolled && (
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-30 px-4 overflow-hidden">
           <img
             src={image}
             className="absolute inset-0 w-full h-full object-cover"

@@ -1,11 +1,10 @@
-
 [
   {
     "id": 27,
     "categoryId": 9,
     "name": "ساندويش كريسبي",
     "description": "ساندويش كريسبي",
-    "image": "./productImg/كريسبي.webp",
+    "image": "/productImg/krispy.webp",
     "priceOld": 200,
     "priceNew": 110,
     "featured": true,
@@ -17,7 +16,7 @@
     "categoryId": 4,
     "name": "وجبة شاورما إكسترا",
     "description": "وجبة شاورما إكسترا + بطاطا + مخللات + مثومة + سلطة روسيّة",
-    "image": "./productImg/شاورما.webp",
+    "image": "/productImg/shawrma.webp",
     "priceOld": 300,
     "priceNew": 199,
     "featured": true,
@@ -29,7 +28,7 @@
     "categoryId": 5,
     "name": "سوبريم",
     "description": "سوبريم 4 قطع + بطاطا + مخللات",
-    "image": "./productImg/سوبريم.webp",
+    "image": "/productImg/soprem.webp",
     "priceOld": 350,
     "priceNew": 249,
     "featured": true,
@@ -41,7 +40,7 @@
         "multiple": false,
         "choices": [
           { "label": "صغير", "extraPrice": 0 },
-          { "label": "وسط",  "extraPrice": 30 },
+          { "label": "وسط", "extraPrice": 30 },
           { "label": "كبير", "extraPrice": 60 }
         ]
       },
@@ -51,7 +50,7 @@
         "multiple": true,
         "choices": [
           { "label": "جبنة إضافية", "extraPrice": 15 },
-          { "label": "صوص حار",     "extraPrice": 5 }
+          { "label": "صوص حار", "extraPrice": 5 }
         ]
       }
     ]
