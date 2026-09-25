@@ -2,6 +2,7 @@ import FeatureProduct from "../menu/FeaturedProducts"
 import CategoriesBar  from "../menu/CategoriesBar"
 import CategoriesGrid from "../menu/Categoriesgrid"
 import SearchBar from "../menu/SearchBar"
+import BannerSlider from "../menu/BannerSlider"
 function HomePage()
 {
    return(
@@ -10,7 +11,7 @@ function HomePage()
     <CategoriesBar/>
 <CategoriesGrid/>
     <SearchBar/>
-    <div>BannerSlider</div>
+    <BannerSlider/>
     <FeatureProduct/>
     </div>
     </>

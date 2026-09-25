@@ -8,14 +8,15 @@
 
   --font-sans: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
 
-  --breakpoint-xl-custom: 1200px;
+  /* --breakpoint-xl-custom: 1200px; */
 }
 
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 body {

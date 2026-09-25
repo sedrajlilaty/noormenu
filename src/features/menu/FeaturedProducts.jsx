@@ -8,7 +8,7 @@ function FeatureProduct() {
 
   return (
     <div className="w-full">
-      <h3 className="flex items-center gap-2 font-bold text-lg ">
+      <h3 className="flex items-center gap-2 font-bold text-lg mb-4">
         <span>⭐</span>
         <span>الأكثر طلباً وتميزاً</span>
       </h3>

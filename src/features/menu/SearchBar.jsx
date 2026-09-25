@@ -6,7 +6,7 @@ export default function SearchBar()
     return(
    <div className="flex items-center w-full bg-white border border-amber-200 rounded-full px-4 sm:px-5 py-3 sm:py-4 min-h-[45px] gap-4">
     <span></span>
-  <i className="fas fa-magnifying-glass text-gray-500 mr-6"></i>
+  <i className="fas fa-magnifying-glass text-gray-500 "></i>
   <input
     type="text"
     placeholder="ابحث عن منتجك المفضل..."
