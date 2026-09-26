@@ -4,7 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import AppLayout from './shared/ui/AppLayout'
 import HomePage from './features/home/HomePage'
-// import CategoryPage from './features/category/CategoryPage'
+import { CartProvider } from './context/CartContext'
+import CategoryPage from './features/category/CategoryPage'
 // import CartPage from './features/cart/CartPage'
 
 const router = createBrowserRouter([
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       { path: '/', element: <HomePage /> },
+      { path:"/categories", element:<CategoryPage />},
       // { path: '/category/:id', element: <CategoryPage /> },
       // { path: '/cart', element: <CartPage /> },
     ],
@@ -19,7 +21,9 @@ const router = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+ <StrictMode>
+  <CartProvider>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </CartProvider>
+</StrictMode>
 )

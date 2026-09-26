@@ -1,10 +1,15 @@
 import { useState } from "react"
-
+import { useCart } from '../../context/CartContext'
 function ProductCard({ product, onAddToCart, onOpenOptions }) {
-  const [quantity, setQuantity] = useState(0)
+ 
+  
   const hasDiscount = product.priceOld !== product.priceNew
   const max_length = 30
   const long = product.description.length > max_length
+  const { cart, addToCart, increaseQuantity, decreaseQuantity } = useCart()
+
+  const cartItem = cart.find((item) => item.id === product.id)
+  const quantity = cartItem ? cartItem.quantity : 0
   const shortText = long
     ? product.description.slice(0, max_length) + '...'
     : product.description
@@ -63,20 +68,21 @@ function ProductCard({ product, onAddToCart, onOpenOptions }) {
             )}
           </div>
 
-          {product.hasOptions ? (
-            <button
-              onClick={handleSelect}
-              className="shrink-0 border border-main text-main rounded-full px-4 py-2 text-sm whitespace-nowrap hover:bg-main hover:text-white transition"
-            >
-              اختر
-            </button>
-          ) : (
-            <div className="shrink-0 flex items-center gap-3 bg-gray-100 rounded-full px-1 py-1">
-              <button onClick={increase} className="text-main font-bold">+</button>
-              <span className="font-bold w-4 text-center">{quantity}</span>
-              <button onClick={decrease} className="text-main font-bold">−</button>
-            </div>
-          )}
+         {product.hasOptions ? (
+  <button onClick={() => onOpenOptions(product)} className="...">
+    اختر
+  </button>
+) : quantity === 0 ? (
+  <button onClick={() => addToCart(product)} className="...">
+    + إضافة
+  </button>
+) : (
+  <div className="flex items-center gap-3 bg-gray-100 rounded-full px-3 py-1">
+    <button onClick={() => increaseQuantity(product.id)} className="text-main font-bold">+</button>
+    <span className="font-bold w-4 text-center">{quantity}</span>
+    <button onClick={() => decreaseQuantity(product.id)} className="text-main font-bold">−</button>
+  </div>
+)}
 
         </div>
       </div>
