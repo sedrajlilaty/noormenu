@@ -7,7 +7,7 @@ import SideMenu from './SideMenu';
 import Loader from './Loader';
 import Footer from './Footer';
 import Toast from '../../features/cart/Toast';
-
+import CartBar from './CartBar';
 export default function AppLayout() {
   const navigation = useNavigation()
   const isLoading = navigation.state === 'loading'

@@ -1,4 +1,5 @@
-import categories from "./data/categories.json"
+import categories from "../../shared/data/categories.json"
+
 
 export default function CategoriesGrid() {
   return (

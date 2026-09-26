@@ -1,5 +1,6 @@
 import ProductCard from "../products/ProductCard"
-import products from './data/products.json'
+import products from '../../shared/data/products.json'
+
 
 function FeatureProduct() {
   const handleAddToCart = (product) => {

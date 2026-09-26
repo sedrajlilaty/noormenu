@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import banners from './data/banners.json'
+import banners from '../../shared/data/banners.json'
 
 function BannerSlider() {
   return (

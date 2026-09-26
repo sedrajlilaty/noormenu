@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
-import categories from "../menu/data/categories.json"
+import categories from "../../shared/data/categories.json"
+
 
 export default function CategoryPage() {
   return (

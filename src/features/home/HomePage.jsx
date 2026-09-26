@@ -1,6 +1,6 @@
 import FeatureProduct from "../menu/FeaturedProducts"
 import CategoriesBar  from "../menu/CategoriesBar"
-import CategoriesGrid from "../menu/Categoriesgrid"
+import CategoriesGrid from "../menu/CategoriesGrid"
 import SearchBar from "../menu/SearchBar"
 import BannerSlider from "../menu/BannerSlider"
 function HomePage()

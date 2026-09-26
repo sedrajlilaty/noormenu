@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom'
-import { useCart } from './CartContext'
+import { useCart } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
+
 export default function CartBar() {
   const { totalItems, totalPrice } = useCart()
   const location = useLocation()
