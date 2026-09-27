@@ -111,6 +111,7 @@ export default function ProductModal({ product, onClose }) {
                   )}
                 </label>
               ))}
+              
             </div>
           ))}
 
