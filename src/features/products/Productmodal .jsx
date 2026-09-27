@@ -71,7 +71,7 @@ export default function ProductModal({ product, onClose }) {
 
         <div className="p-5">
           <div className="flex items-start justify-between gap-3 mb-2">
-                        <h3 className="font-bold text-gray-800 text-2xl text-right">{product.name}</h3>
+                        <h3 className="font-bold text-gray-800 text-2xl sm:text-2xl text-right">{product.name}</h3>
 
             <div className="flex items-center gap-2">
               <span className="text-main font-bold text-lg">{product.priceNew}</span>
@@ -111,7 +111,7 @@ export default function ProductModal({ product, onClose }) {
                   )}
                 </label>
               ))}
-              
+
             </div>
           ))}
 

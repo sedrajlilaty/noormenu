@@ -10,6 +10,7 @@ export default function CategoriesGrid() {
           className="
             relative
             w-28 h-28
+            sm:w-28 sm:h-28
             rounded-xl
             overflow-hidden
             cursor-pointer

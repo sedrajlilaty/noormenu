@@ -25,7 +25,7 @@ function BannerSlider() {
           <SwiperSlide key={banner.id}>
             <img
               src={banner.image}
-              className=" h-70 object-cover rounded-2xl"
+              className="w-full h-72 object-cover rounded-2xl"
             />
           </SwiperSlide>
         ))}
