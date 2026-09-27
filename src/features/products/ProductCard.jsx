@@ -51,10 +51,10 @@ function ProductCard({ product }) {
   return (
     <>
       <div className="flex bg-white rounded-2xl overflow-hidden shadow-sm min-h-[130px] ">
-        <img
-          src={product.image}
-          className="w-[130px] h-[170px] object-cover shrink-0"
-        />
+      <img
+  src={product.image}
+  className="w-[90px] h-[130px] sm:w-[110px] sm:h-[150px] md:w-[130px] md:h-[170px] object-cover shrink-0"
+/>
         <div className="flex flex-col min-w-0 px-3 py-4 grow ">
 
 <h3 className="font-bold text-gray-800 text-sm sm:text-base">

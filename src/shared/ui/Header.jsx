@@ -22,7 +22,7 @@ function Header({ onMenuClick }) {
 <div className="relative z-10 flex justify-between items-center px-3 sm:px-4 md:px-6 py-3 h-full">
             <div className="flex items-center gap-3">
 <img className="h-10 sm:h-12 md:h-[50px] w-auto rounded-full object-contain" />
-<span className="text-white font-extrabold text-lg sm:text-xl md:text-2xl">مطعم النور</span>
+<span className="text-white font-extrabold text-base sm:text-lg md:text-2xl">مطعم النور</span>
             </div>
 
             <button className="w-10 h-10 rounded-full bg-white/40 flex items-center justify-center ml-1"onClick={onMenuClick}>

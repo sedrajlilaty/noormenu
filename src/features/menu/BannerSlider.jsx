@@ -11,7 +11,7 @@ function BannerSlider() {
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
         spaceBetween={16}
-        slidesPerView={2}
+        slidesPerView={1}
         autoplay={{ delay: 3000 }}
         breakpoints={{
           768: {
