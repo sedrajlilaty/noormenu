@@ -6,7 +6,7 @@ import AppLayout from './shared/ui/AppLayout'
 import HomePage from './features/home/HomePage'
 import { CartProvider } from './context/CartContext'
 import CategoryPage from './features/category/CategoryPage'
-// import CartPage from './features/cart/CartPage'
+ import CartPage from './features/cart/CartPage'
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       { path: '/', element: <HomePage /> },
       { path:"/categories", element:<CategoryPage />},
       // { path: '/category/:id', element: <CategoryPage /> },
-      // { path: '/cart', element: <CartPage /> },
+       { path: '/cart', element: <CartPage /> },
     ],
   },
 ])

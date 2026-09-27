@@ -7,7 +7,7 @@ import SideMenu from './SideMenu';
 import Loader from './Loader';
 import Footer from './Footer';
 import Toast from '../../features/cart/Toast';
-import CartBar from './CartBar';
+import CartBar from '../../features/cart/CartBar';
 export default function AppLayout() {
   const navigation = useNavigation()
   const isLoading = navigation.state === 'loading'
@@ -26,8 +26,7 @@ function onMenuClick()
       {isLoading && <Loader />}
 <SideMenu isOpen={isOpenMenu}  onClose={handleClose}/>
       <Header onMenuClick={onMenuClick}/>
-<main className="max-w-7xl mx-auto w-full ">
-  <Outlet />
+<main className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">  <Outlet />
 </main>
 <Toast />
 <CartBar />

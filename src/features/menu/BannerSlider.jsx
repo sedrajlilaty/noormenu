@@ -11,7 +11,7 @@ function BannerSlider() {
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
         spaceBetween={16}
-        slidesPerView={1}
+        slidesPerView={2}
         autoplay={{ delay: 3000 }}
         breakpoints={{
           768: {
@@ -25,8 +25,7 @@ function BannerSlider() {
           <SwiperSlide key={banner.id}>
             <img
               src={banner.image}
-              className="w-full h-72 object-cover rounded-2xl"
-            />
+className="w-full h-40 sm:h-48 md:h-56 object-cover rounded-2xl"            />
           </SwiperSlide>
         ))}
       </Swiper>

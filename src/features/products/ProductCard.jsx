@@ -13,7 +13,7 @@ function ProductCard({ product }) {
   // const increase = () => {
   //   const newQty = quantity + 1
   //   setQuantity(newQty)
-  //   onAddToCart(product, newQty)
+  //   onAddToCart(product, newQty) 
   // }
 
   // const decrease = () => {
@@ -57,12 +57,11 @@ function ProductCard({ product }) {
         />
         <div className="flex flex-col min-w-0 px-3 py-4 grow ">
 
-          <h3 className="font-bold text-gray-800">
+<h3 className="font-bold text-gray-800 text-sm sm:text-base">
             {product.name}
           </h3>
 
-          <p className="text-sm text-gray-400 leading-6 mt-1">
-            {shortText}
+<p className="text-xs sm:text-sm text-gray-400 leading-6 mt-1">            {shortText}
             {long && (
               <button
                 type="button"
