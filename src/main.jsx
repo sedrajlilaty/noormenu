@@ -5,16 +5,17 @@ import './index.css'
 import AppLayout from './shared/ui/AppLayout'
 import HomePage from './features/home/HomePage'
 import { CartProvider } from './context/CartContext'
+import AllCategoriesPage from './features/category/AllCategoriesPage'
+import CartPage from './features/cart/CartPage'
 import CategoryPage from './features/category/CategoryPage'
- import CartPage from './features/cart/CartPage'
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
     children: [
       { path: '/', element: <HomePage /> },
-      { path:"/categories", element:<CategoryPage />},
-      // { path: '/category/:id', element: <CategoryPage /> },
+      { path:"/categories", element:<AllCategoriesPage />},
+      { path: '/category/:id', element: <CategoryPage /> },
        { path: '/cart', element: <CartPage /> },
     ],
   },

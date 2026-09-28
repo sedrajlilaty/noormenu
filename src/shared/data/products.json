@@ -1,17 +1,5 @@
 [
   {
-    "id": 27,
-    "categoryId": 9,
-    "name": "ساندويش كريسبي",
-    "description": "ساندويش كريسبي",
-    "image": "/productImg/krispy.webp",
-    "priceOld": 200,
-    "priceNew": 110,
-    "featured": true,
-    "hasOptions": false,
-    "optionGroups": []
-  },
-  {
     "id": 22,
     "categoryId": 4,
     "name": "وجبة شاورما إكسترا",
@@ -24,8 +12,140 @@
     "optionGroups": []
   },
   {
-    "id": 11,
+    "id": 31,
+    "categoryId": 4,
+    "name": "ساندويش شاورما دجاج",
+    "description": "شاورما دجاج مع مخلل وثوم",
+    "image": "https://loremflickr.com/600/400/shawarma?lock=31",
+    "priceOld": 90,
+    "priceNew": 75,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 32,
+    "categoryId": 4,
+    "name": "شاورما لحم",
+    "description": "شاورما لحم على الصاج مع بطاطا",
+    "image": "https://loremflickr.com/600/400/shawarma?lock=32",
+    "priceOld": 150,
+    "priceNew": 130,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 33,
+    "categoryId": 4,
+    "name": "صحن شاورما عربي",
+    "description": "صحن شاورما مع حمص وسلطة",
+    "image": "https://loremflickr.com/600/400/shawarma?lock=33",
+    "priceOld": 210,
+    "priceNew": 185,
+    "featured": false,
+    "hasOptions": true,
+    "optionGroups": [
+      {
+        "name": "إضافات",
+        "required": false,
+        "multiple": true,
+        "choices": [
+          {
+            "label": "حار زيادة",
+            "extraPrice": 10
+          },
+          {
+            "label": "مايونيز زيادة",
+            "extraPrice": 10
+          },
+          {
+            "label": "مخلل زيادة",
+            "extraPrice": 10
+          },
+          {
+            "label": "بطاطا زيادة",
+            "extraPrice": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 34,
     "categoryId": 5,
+    "name": "بروستد 4 قطع",
+    "description": "4 قطع بروستد + بطاطا + كولسلو",
+    "image": "https://loremflickr.com/600/400/friedchicken?lock=34",
+    "priceOld": 240,
+    "priceNew": 199,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 35,
+    "categoryId": 5,
+    "name": "بروستد 8 قطع",
+    "description": "8 قطع بروستد + بطاطا + صوص ثوم",
+    "image": "https://loremflickr.com/600/400/friedchicken?lock=35",
+    "priceOld": 420,
+    "priceNew": 360,
+    "featured": true,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 36,
+    "categoryId": 5,
+    "name": "وجبة بروستد عائلية",
+    "description": "12 قطعة + بطاطا كبيرة + مشروب",
+    "image": "https://loremflickr.com/600/400/friedchicken?lock=36",
+    "priceOld": 650,
+    "priceNew": 560,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 37,
+    "categoryId": 7,
+    "name": "نص فروج مشوي",
+    "description": "نص فروج مشوي على الفحم مع رز",
+    "image": "https://loremflickr.com/600/400/grilledchicken?lock=37",
+    "priceOld": 260,
+    "priceNew": 230,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 38,
+    "categoryId": 7,
+    "name": "فروج كامل",
+    "description": "فروج كامل مشوي + ثوم + مخللات",
+    "image": "https://loremflickr.com/600/400/grilledchicken?lock=38",
+    "priceOld": 480,
+    "priceNew": 420,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 39,
+    "categoryId": 7,
+    "name": "ربع فروج مع رز",
+    "description": "ربع فروج + رز بسمتي + سلطة",
+    "image": "https://loremflickr.com/600/400/roastchicken?lock=39",
+    "priceOld": 170,
+    "priceNew": 150,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 11,
+    "categoryId": 8,
     "name": "سوبريم",
     "description": "سوبريم 4 قطع + بطاطا + مخللات",
     "image": "/productImg/soprem.webp",
@@ -35,24 +155,212 @@
     "hasOptions": true,
     "optionGroups": [
       {
-        "name": "الحجم",
-        "required": true,
-        "multiple": false,
+        "name": "إضافات",
+        "required": false,
+        "multiple": true,
         "choices": [
-          { "label": "صغير", "extraPrice": 0 },
-          { "label": "وسط", "extraPrice": 30 },
-          { "label": "كبير", "extraPrice": 60 }
+          {
+            "label": "حار زيادة",
+            "extraPrice": 10
+          },
+          {
+            "label": "مايونيز زيادة",
+            "extraPrice": 10
+          },
+          {
+            "label": "مخلل زيادة",
+            "extraPrice": 10
+          },
+          {
+            "label": "بطاطا زيادة",
+            "extraPrice": 20
+          }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "categoryId": 8,
+    "name": "وجبة كريسبي",
+    "description": "وجبة كريسبي 4 قطع + بطاطا + مخللات",
+    "image": "https://loremflickr.com/600/400/friedchicken?lock=40",
+    "priceOld": 300,
+    "priceNew": 199,
+    "featured": false,
+    "hasOptions": true,
+    "optionGroups": [
       {
         "name": "إضافات",
         "required": false,
         "multiple": true,
         "choices": [
-          { "label": "جبنة إضافية", "extraPrice": 15 },
-          { "label": "صوص حار", "extraPrice": 5 }
+          {
+            "label": "حار زيادة",
+            "extraPrice": 10
+          },
+          {
+            "label": "مايونيز زيادة",
+            "extraPrice": 10
+          },
+          {
+            "label": "مخلل زيادة",
+            "extraPrice": 10
+          },
+          {
+            "label": "بطاطا زيادة",
+            "extraPrice": 20
+          }
         ]
       }
     ]
+  },
+  {
+    "id": 41,
+    "categoryId": 8,
+    "name": "وجبة سكالوب",
+    "description": "وجبة سكالوب + بطاطا + مخللات + مثومة",
+    "image": "https://loremflickr.com/600/400/schnitzel?lock=41",
+    "priceOld": 300,
+    "priceNew": 199,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 27,
+    "categoryId": 9,
+    "name": "ساندويش كريسبي",
+    "description": "ساندويش كريسبي",
+    "image": "/productImg/krispy.webp",
+    "priceOld": 200,
+    "priceNew": 110,
+    "featured": true,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 42,
+    "categoryId": 9,
+    "name": "ساندويش زنجر",
+    "description": "زنجر مقرمش مع خس وصوص خاص",
+    "image": "https://loremflickr.com/600/400/sandwich?lock=42",
+    "priceOld": 130,
+    "priceNew": 105,
+    "featured": false,
+    "hasOptions": true,
+    "optionGroups": [
+      {
+        "name": "إضافات",
+        "required": false,
+        "multiple": true,
+        "choices": [
+          {
+            "label": "جبنة زيادة",
+            "extraPrice": 10
+          },
+          {
+            "label": "صوص حار",
+            "extraPrice": 5
+          },
+          {
+            "label": "بطاطا زيادة",
+            "extraPrice": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "categoryId": 9,
+    "name": "ساندويش برغر لحم",
+    "description": "برغر لحم مشوي + جبنة + خضار",
+    "image": "https://loremflickr.com/600/400/burger?lock=43",
+    "priceOld": 160,
+    "priceNew": 140,
+    "featured": false,
+    "hasOptions": true,
+    "optionGroups": [
+      {
+        "name": "إضافات",
+        "required": false,
+        "multiple": true,
+        "choices": [
+          {
+            "label": "جبنة زيادة",
+            "extraPrice": 10
+          },
+          {
+            "label": "صوص حار",
+            "extraPrice": 5
+          },
+          {
+            "label": "بطاطا زيادة",
+            "extraPrice": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "categoryId": 9,
+    "name": "ساندويش فاهيتا",
+    "description": "فاهيتا دجاج مع فليفلة وبصل",
+    "image": "https://loremflickr.com/600/400/sandwich?lock=44",
+    "priceOld": 120,
+    "priceNew": 100,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 45,
+    "categoryId": 10,
+    "name": "شيش طاووق",
+    "description": "شيش طاووق مشوي + رز + سلطة",
+    "image": "https://loremflickr.com/600/400/skewers?lock=45",
+    "priceOld": 280,
+    "priceNew": 250,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 46,
+    "categoryId": 10,
+    "name": "كباب لحم",
+    "description": "كباب لحم على الفحم + بصل مشوي",
+    "image": "https://loremflickr.com/600/400/kebab?lock=46",
+    "priceOld": 320,
+    "priceNew": 290,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 47,
+    "categoryId": 10,
+    "name": "مشاوي مشكل",
+    "description": "تشكيلة مشاوي للشخصين",
+    "image": "https://loremflickr.com/600/400/grill?lock=47",
+    "priceOld": 650,
+    "priceNew": 580,
+    "featured": true,
+    "hasOptions": false,
+    "optionGroups": []
+  },
+  {
+    "id": 48,
+    "categoryId": 10,
+    "name": "ريش غنم",
+    "description": "ريش غنم مشوية مع خضار",
+    "image": "https://loremflickr.com/600/400/lamb?lock=48",
+    "priceOld": 520,
+    "priceNew": 470,
+    "featured": false,
+    "hasOptions": false,
+    "optionGroups": []
   }
 ]

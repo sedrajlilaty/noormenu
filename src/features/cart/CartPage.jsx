@@ -13,13 +13,13 @@ const restaurantPhone = "905404355539"
 export default function CartPage() {
   const { cart, increaseQuantity, decreaseQuantity, clearCart, totalPrice } = useCart()
   const navigate = useNavigate()
-
-  const [coupon, setCoupon] = useState("")
-  const [discount, setDiscount] = useState(0)
-
   const [name, setName] = useState("")
   const [phone, setPhone] = useState("")
   const [area, setArea] = useState("")
+  const [coupon, setCoupon] = useState("")
+  const [discount, setDiscount] = useState(0)
+
+
   const [address, setAddress] = useState("")
   const [notes, setNotes] = useState("")
 
