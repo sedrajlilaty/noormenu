@@ -16,7 +16,6 @@ function handleClose()
 {
 setIsOpen(false)
 }
-
 function onMenuClick()
 {
   setIsOpen(true)
@@ -26,7 +25,7 @@ function onMenuClick()
       {isLoading && <Loader />}
 <SideMenu isOpen={isOpenMenu}  onClose={handleClose}/>
       <Header onMenuClick={onMenuClick}/>
-<main className="max-w-7xl mx-auto w-full ">
+<main className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
   <Outlet />
 </main>
 <Toast />

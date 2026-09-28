@@ -1,34 +1,42 @@
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination, Autoplay } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
+import { useState, useRef } from 'react'
 import banners from '../../shared/data/banners.json'
 
 function BannerSlider() {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const slideRefs = useRef([])
+
+  const goToSlide = (index) => {
+    slideRefs.current[index]?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+    })
+    setActiveIndex(index)
+  }
+
   return (
-    <div className="">
-      <Swiper
-        modules={[Pagination, Autoplay]}
-        pagination={{ clickable: true }}
-        spaceBetween={16}
-        slidesPerView={1}
-        autoplay={{ delay: 3000 }}
-        breakpoints={{
-          768: {
-            slidesPerView: 2,
-            autoplay: false,
-          },
-        }}
-        className="rounded-2xl w-full"
-      >
-        {banners.map((banner) => (
-          <SwiperSlide key={banner.id}>
-            <img
-              src={banner.image}
-className="w-full h-40 sm:h-48 md:h-56 object-cover rounded-2xl"            />
-          </SwiperSlide>
+    <div className="w-full">
+      <div className="w-full overflow-x-auto snap-x snap-mandatory flex gap-4 [&::-webkit-scrollbar]:hidden">
+        {banners.map((banner, index) => (
+          <img
+            key={banner.id}
+            ref={(el) => (slideRefs.current[index] = el)}
+            src={banner.image}
+            className="w-full sm:w-[calc(50%-8px)] shrink-0 snap-center h-40 sm:h-48 md:h-56 object-cover rounded-2xl"
+          />
         ))}
-      </Swiper>
+      </div>
+
+      <div className="flex justify-center gap-2 mt-3">
+        {banners.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-2 h-2 rounded-full transition ${
+              activeIndex === index ? 'bg-main w-4' : 'bg-gray-300'
+            }`}
+          />
+        ))}
+      </div>
     </div>
   )
 }

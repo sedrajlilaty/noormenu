@@ -12,7 +12,7 @@ function HomePage()
 <CategoriesGrid/>
     <SearchBar/>
     <BannerSlider/>
-    <FeatureProduct/>
+<FeatureProduct/>
     </div>
     </>
    ) 
