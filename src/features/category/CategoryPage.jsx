@@ -24,7 +24,7 @@ export default function CategoryPage() {
         <Link to="/" className="text-main text-lg">
           <i className="fas fa-arrow-right"></i>
         </Link>
-        <h2 className="text-xl font-bold text-gray-800">{category.name}</h2>
+        <h2 className="text-xl font-bold text-gray-800 flex-1 text-center">{category.name}</h2>
       </div>
 
       <div className="bg-white rounded-2xl shadow-sm p-5 mb-4 flex items-center gap-4">

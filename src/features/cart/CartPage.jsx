@@ -13,15 +13,19 @@ const restaurantPhone = "905404355539"
 export default function CartPage() {
   const { cart, increaseQuantity, decreaseQuantity, clearCart, totalPrice } = useCart()
   const navigate = useNavigate()
+  
   const [name, setName] = useState("")
   const [phone, setPhone] = useState("")
   const [area, setArea] = useState("")
   const [coupon, setCoupon] = useState("")
   const [discount, setDiscount] = useState(0)
-
-
   const [address, setAddress] = useState("")
   const [notes, setNotes] = useState("")
+
+  // حساب القيم المالية بشكل صحيح داخل المكون
+  const selectedAreaFee = areas.find((a) => a.name === area)?.fee || 0
+  const tax = Math.round((totalPrice - discount) * 0.1)
+  const finalTotal = totalPrice - discount + tax + selectedAreaFee
 
   if (cart.length === 0)
     return (
@@ -50,24 +54,12 @@ export default function CartPage() {
     )
 
   function applyCoupon() {
-    if (coupon.trim().toLowerCase() === "off10") {
-      setDiscount(Math.round(totalPrice * 0.1))
-    } else {
-      alert("الكوبون غير صالح")
-      setDiscount(0)
-    }
+    // يمكنك إضافة منطق التحقق من الكوبون هنا وتعديل قيمة الخصم عبر setDiscount
   }
 
-  const selectedAreaFee = areas.find((a) => a.name === area)?.fee || 0
-  const tax = Math.round((totalPrice - discount) * 0.1)
-  const finalTotal = totalPrice - discount + tax + selectedAreaFee
-
-  function sendOrderOnWhatsapp() {
-    if (!phone.trim()) {
-      alert("لازم تحط رقم التواصل قبل ما ترسل الطلب")
-      return
-    }
-
+  function sendOrderOnWhatsapp(e) {
+    e.preventDefault()
+    
     let msg = `طلب جديد من مطعم النور 🍔\n\n`
 
     cart.forEach((item) => {
@@ -111,7 +103,7 @@ export default function CartPage() {
       <div className="flex flex-col gap-4 mb-6">
         {cart.map((item) => (
           <div key={item.id} className="flex bg-white rounded-2xl shadow-sm overflow-hidden">
-            <img src={item.image} className="w-24 h-24 object-cover shrink-0" />
+            <img src={item.image} className="w-24 h-24 object-cover shrink-0" alt={item.name} />
 
             <div className="flex flex-col justify-between p-3 grow min-w-0">
               <div>
@@ -148,6 +140,7 @@ export default function CartPage() {
             className="flex-1 border border-gray-200 rounded-full px-4 py-2 text-sm outline-none"
           />
           <button
+            type="button"
             onClick={applyCoupon}
             className="bg-main text-white rounded-full px-6 py-2 text-sm"
           >
@@ -173,7 +166,7 @@ export default function CartPage() {
         </div>
         <div className="flex justify-between text-sm text-gray-600 mb-3">
           <span>رسوم التوصيل</span>
-          <span>{selectedAreaFee}</span>
+          <span>{selectedAreaFee} ليرة</span>
         </div>
 
         <div className="border-t pt-3 flex justify-between font-bold text-lg">
@@ -182,72 +175,78 @@ export default function CartPage() {
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-sm p-4 mb-6">
-        <p className="flex items-center gap-2 font-bold text-gray-700 mb-3">
-          <i className="fas fa-location-dot text-main"></i>
-          بيانات الاستلام
-        </p>
+      <form onSubmit={sendOrderOnWhatsapp}>
+        <div className="bg-white rounded-2xl shadow-sm p-4 mb-6">
+          <p className="flex items-center gap-2 font-bold text-gray-700 mb-3">
+            <i className="fas fa-location-dot text-main"></i>
+            بيانات الاستلام
+          </p>
 
-        <label className="block text-sm text-gray-600 mb-1">الاسم الكريم</label>
-        <input
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="الاسم"
-          className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-3 outline-none"
-        />
+          <label className="block text-sm text-gray-600 mb-1">الاسم الكريم</label>
+          <input
+            value={name}
+            required 
+            onChange={(e) => setName(e.target.value)}
+            placeholder="الاسم"
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-3 outline-none"
+          />
 
-        <label className="block text-sm text-gray-600 mb-1">
-          رقم التواصل (واتساب أو اتصال) *
-        </label>
-        <input
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          placeholder="مثال: 0912345678"
-          className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-3 outline-none"
-        />
+          <label className="block text-sm text-gray-600 mb-1">
+            رقم التواصل (واتساب أو اتصال) *
+          </label>
+          <input
+            value={phone}
+            required 
+            onChange={(e) => setPhone(e.target.value)}
+            placeholder="مثال: 0912345678"
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-3 outline-none"
+          />
 
-        <label className="block text-sm text-gray-600 mb-1">
-          المنطقة (لتحديد سعر التوصيل إن توفر)
-        </label>
-        <select
-          value={area}
-          onChange={(e) => setArea(e.target.value)}
-          className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-3 outline-none"
+          <label className="block text-sm text-gray-600 mb-1">
+            المنطقة (لتحديد سعر التوصيل إن توفر)
+          </label>
+          <select
+            value={area}
+            required 
+            onChange={(e) => setArea(e.target.value)}
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-3 outline-none"
+          >
+            <option value="">-- اختر منطقتك --</option>
+            {areas.map((a) => (
+              <option key={a.name} value={a.name}>{a.name}</option>
+            ))}
+          </select>
+
+          <label className="block text-sm text-gray-600 mb-1">
+            تفاصيل العنوان (الشارع، البناء)
+          </label>
+          <textarea
+            value={address}
+            required 
+            onChange={(e) => setAddress(e.target.value)}
+            placeholder="مثلا: جانب المسجد الكبير، بناية رقم 5"
+            rows={2}
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-3 outline-none"
+          />
+
+          <label className="block text-sm text-gray-600 mb-1">ملاحظات إضافية</label>
+          <textarea
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+            placeholder="أي ملاحظات إضافية..."
+            rows={2}
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none"
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-green-500 text-white rounded-full py-3 font-bold flex items-center justify-center gap-2"
         >
-          <option value="">-- اختر منطقتك --</option>
-          {areas.map((a) => (
-            <option key={a.name} value={a.name}>{a.name}</option>
-          ))}
-        </select>
-
-        <label className="block text-sm text-gray-600 mb-1">
-          تفاصيل العنوان (الشارع، البناء)
-        </label>
-        <textarea
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          placeholder="مثلا: جانب المسجد الكبير، بناية رقم 5"
-          rows={2}
-          className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-3 outline-none"
-        />
-
-        <label className="block text-sm text-gray-600 mb-1">ملاحظات إضافية</label>
-        <textarea
-          value={notes}
-          onChange={(e) => setNotes(e.target.value)}
-          placeholder="أي ملاحظات إضافية..."
-          rows={2}
-          className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none"
-        />
-      </div>
-
-      <button
-        onClick={sendOrderOnWhatsapp}
-        className="w-full bg-green-500 text-white rounded-full py-3 font-bold flex items-center justify-center gap-2"
-      >
-        <i className="fab fa-whatsapp text-xl"></i>
-        إرسال الطلب عبر واتساب
-      </button>
+          <i className="fab fa-whatsapp text-xl"></i>
+          إرسال الطلب عبر واتساب
+        </button>
+      </form>
     </div>
   )
 }
