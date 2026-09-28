@@ -11,7 +11,7 @@ export default function SideMenu({ isOpen, onClose }) {
         className="fixed inset-0 bg-black/50 z-40"
       ></div>
 
-      <div  className="fixed top-0 left-0 h-full w-64 sm:w-72 md:w-80 bg-white z-[60] overflow-y-auto rounded-l-2xl">
+      <div  className="fixed top-0 left-0 h-full w-64 sm:w-72 md:w-80 bg-white z-[60] overflow-y-auto rounded-r-2xl">
         <div className="p-5 space-y-8">
           <button onClick={onClose} className="text-gray-500 text-xl">
             <i className="fas fa-xmark"></i>
