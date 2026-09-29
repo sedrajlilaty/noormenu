@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { useCart } from '../../context/CartContext'
-import ProductModal from './Productmodal'
+import ProductModal from './ProductModal'
 
-function ProductCard({ product }) {
+function ProductCard({ product, showOptionsInfo = true }) {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const hasDiscount = product.priceOld !== product.priceNew
@@ -10,27 +10,6 @@ function ProductCard({ product }) {
   const long = product.description.length > max_length
   const { cart, addToCart, increaseQuantity, decreaseQuantity } = useCart()
 
-  // const increase = () => {
-  //   const newQty = quantity + 1
-  //   setQuantity(newQty)
-  //   onAddToCart(product, newQty) 
-  // }
-
-  // const decrease = () => {
-  //   if (quantity === 0) return
-  //   const newQty = quantity - 1
-  //   setQuantity(newQty)
-  //   onAddToCart(product, newQty)
-  // }
-
-  // const handleSelect = () => {
-  //   if (product.hasOptions) {
-  //     onOpenOptions(product)
-  //   } else {
-  //     setQuantity(1)
-  //     onAddToCart(product)
-  //   }
-  // }
   const cartItem = cart.find((item) => item.id === product.id)
   const quantity = cartItem ? cartItem.quantity : 0
   const shortText = long
@@ -51,17 +30,18 @@ function ProductCard({ product }) {
   return (
     <>
       <div className="flex bg-white rounded-2xl overflow-hidden shadow-sm min-h-[130px] ">
-      <img
-  src={product.image}
-  className="w-[90px] h-[130px] sm:w-[110px] sm:h-[150px] md:w-[130px] md:h-[170px] object-cover shrink-0"
-/>
+        <img
+          src={product.image}
+          className="w-[130px] h-[170px] object-cover shrink-0"
+        />
         <div className="flex flex-col min-w-0 px-3 py-4 grow ">
 
-<h3 className="font-bold text-gray-800 text-sm sm:text-base">
+          <h3 className="font-bold text-gray-800">
             {product.name}
           </h3>
 
-<p className="text-xs sm:text-sm text-gray-400 leading-6 mt-1">            {shortText}
+          <p className="text-sm text-gray-400 leading-6 mt-1">
+            {shortText}
             {long && (
               <button
                 type="button"
@@ -73,12 +53,24 @@ function ProductCard({ product }) {
             )}
           </p>
 
+          {showOptionsInfo && product.hasOptions && product.optionGroups?.[0]?.choices?.[0] && (
+            <div className="inline-flex items-center gap-1 bg-gray-100 rounded-full px-2.5 py-1 text-xs text-gray-600 w-fit mt-2">
+              <i className="fas fa-star text-main text-[10px]"></i>
+              {product.optionGroups[0].choices[0].label}
+            </div>
+          )}
+
           <div className="flex w-full justify-between items-center mt-auto">
-            <div className="flex items-center gap-3">
-              <span className="text-main font-bold text-lg">{product.priceNew} ليرة</span>
-              {hasDiscount && (
-                <span className="text-gray-400 text-sm line-through">{product.priceOld}</span>
+            <div className="flex flex-col items-start gap-0.5">
+              {showOptionsInfo && product.hasOptions && (
+                <span className="text-gray-400 text-xs">يبدأ من:</span>
               )}
+              <div className="flex items-center gap-3">
+                <span className="text-main font-bold text-lg">{product.priceNew} ليرة</span>
+                {hasDiscount && (
+                  <span className="text-gray-400 text-sm line-through">{product.priceOld}</span>
+                )}
+              </div>
             </div>
 
             {product.hasOptions ? (
