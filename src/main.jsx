@@ -8,7 +8,7 @@ import { CartProvider } from './context/CartContext'
 import AllCategoriesPage from './features/category/AllCategoriesPage'
 import CartPage from './features/cart/CartPage'
 import CategoryPage from './features/category/CategoryPage'
-
+import SearchPage from './features/home/Searchpage '
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -17,6 +17,7 @@ const router = createBrowserRouter([
       { path:"/categories", element:<AllCategoriesPage />},
       { path: '/category/:id', element: <CategoryPage /> },
        { path: '/cart', element: <CartPage /> },
+       { path: '/search', element: <SearchPage /> },
     ],
   },
 ])
